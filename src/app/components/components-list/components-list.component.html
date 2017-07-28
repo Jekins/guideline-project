@@ -1,0 +1,9 @@
+<nav>
+	<h3>Компоненты</h3>
+	<ul>
+		<li *ngFor="let component of components"
+		    (click)="onSelect(component)">
+			<span>{{ component.name }}</span>
+		</li>
+	</ul>
+</nav>

@@ -1,17 +1,1 @@
-<md-sidenav-container>
-  <md-sidenav>
-    <!-- sidenav content -->
-  </md-sidenav>
-  <md-list>
-    <md-list-item *ngFor="let dataItem of component">
-      <h4 md-line>{{dataItem.name}}</h4>
-      <p md-line> {{dataItem.desc}} </p>
-      <div md-line [innerHTML]="dataItem.code | keepHtml"></div>
-      <md-input-container md-line>
-        <textarea mdInput>{{dataItem.code}}</textarea>
-      </md-input-container>
-    </md-list-item>
-  </md-list>
-
-  <!-- primary content -->
-</md-sidenav-container>
+<app-components></app-components>

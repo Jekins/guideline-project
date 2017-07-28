@@ -5,7 +5,7 @@ const fs = require('fs');
 
 //path
 const src = 'src/';
-const componentsJson = 'dist/components.json';
+const componentsJson = '../src/assets/data/components.json';
 const components = src + 'components/';
 
 let componentData = [];
@@ -38,7 +38,7 @@ function parsingHtml(dir, file) {
 		let $ = cheerio.load(fs.readFileSync(dir + file), { decodeEntities: false });
 
 		let result = {};
-		result.component = file.replace('.html','');
+		result.id = file.replace('.html','');
 		result.name = $('name').html();
 		result.desc = $('desc').html();
 		result.code = $('codes').html();

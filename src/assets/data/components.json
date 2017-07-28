@@ -1,12 +1,12 @@
 [
   {
-    "component": "button",
+    "id": "button",
     "name": "Button",
     "desc": "\n\tPrimary button description\n",
-    "code": "<button>Кнопка</button>"
+    "code": "\n\t<button class=\"btn\">Кнопка</button>\n"
   },
-    {
-    "component": "card",
+  {
+    "id": "card",
     "name": "Card",
     "desc": "Card for view",
     "code": "\n\t<div class=\"card\">\n\t\t<h3 class=\"card__title\">Title card</h3>\n\t\t<div class=\"card__lead\">Short card lead</div>\n\t</div>\n"

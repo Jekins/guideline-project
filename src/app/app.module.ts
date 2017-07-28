@@ -1,30 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {MdListModule, MdInputModule} from '@angular/material';
-import { HttpModule } from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpModule} from '@angular/http';
 
-import { EscapeHtmlPipe } from '../pipes/keep-html.pipe';
+import {AppComponent} from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
-
-import { DataService } from '../shared/data.service';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EscapeHtmlPipe
-  ],
-  imports: [
-    BrowserModule,
-    MdListModule,
-    MdInputModule,
-    HttpModule,
-    BrowserAnimationsModule
-  ],
-  providers: [
-    DataService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        ComponentsModule,
+        AppRoutingModule
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

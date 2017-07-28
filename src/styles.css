@@ -1,2 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body, material-app, md-sidenav-container, .my-content {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+md-toolbar {
+	position: relative;
+	z-index: 10;
+}
+md-sidenav {
+	padding-bottom: 72px;
+	width: 240px;
+	bottom: 0;
+	overflow: auto;
+	height: 100%;
+}
+.mat-sidenav-opened {
+	box-shadow: 3px 0 6px rgba(0,0,0,.24)
+}
+.container {
+	margin: 0 auto;
+	max-width: 940px;
+}
+.mat-tab-group {
+	margin-bottom: 50px;
+}
+
+.app-view {
+	font-weight: 400;
+	padding: 20px 70px 50px;
+}
+.mat-tab-label {
+	font-weight: 400;
+	text-transform: uppercase;
+}
+.mat-tab-label-active {
+	opacity: 1!important;
+}
+.mat-tab-body {
+	padding-top: 20px;
+}
+.primary-header h1 {
+	font-size: 30px;
+	font-weight: 400;
+	margin: 0;
+	padding: 50px;
+}
+.primary-header .mat-toolbar-row {
+	height: auto;
+}
+
+  .docs-component-viewer-sidenav li>span {
+      box-sizing: border-box;
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 47px;
+      text-decoration: none;
+      transition: all .3s;
+      padding: 0 16px;
+      position: relative;
+	  color: rgba(0,0,0,.54);
+	  cursor: pointer;
+  }
+.docs-component-viewer-sidenav li {
+	border-color: rgba(0,0,0,.06);
+	color: rgba(0,0,0,.54);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	margin: 0;
+	padding: 0;
+}
+.docs-component-viewer-sidenav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.docs-component-viewer-sidenav h3 {
+	border: none;
+	font-size: 10px;
+	letter-spacing: 1px;
+	line-height: 24px;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin: 0;
+	padding: 0 16px;
+	background: rgba(0,0,0,.32);
+	color: hsla(0,0%,100%,.87);
+}
