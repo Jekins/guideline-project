@@ -1,15 +1,26 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 import 'rxjs/Rx';
+
 
 @Injectable()
 export class ComponentsService {
-    constructor (
-        private http: Http
-    ) {}
+    private componentsUrl = 'assets/data/components/component';
 
-    getData() {
-        return this.http.get('assets/data/components.json')
-            .map((res: Response) => res.json());
+    constructor(private http: Http) {
+    }
+
+    getComponents(id?) {
+        const partUrl = id ? `-${id}` : 's';
+        const url = `${this.componentsUrl + partUrl}.json`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json())
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     }
 }

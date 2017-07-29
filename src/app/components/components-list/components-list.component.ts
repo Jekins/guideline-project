@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {Component, OnInit, Input} from '@angular/core';
+import { Router } from '@angular/router';
 
-import {ComponentsService} from '../components.service';
-
+import { ComponentsService } from '../components.service';
 
 @Component({
     selector: 'app-components-list',
@@ -10,31 +9,20 @@ import {ComponentsService} from '../components.service';
     styleUrls: ['./components-list.component.css']
 })
 export class ComponentsListComponent implements OnInit {
-    components;
-    pages;
-
-    private selectedId: number;
+    @Input() components: Array<{}>;
+    selectedComponent;
 
     constructor(
-        private componentsService: ComponentsService,
-        private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private componentService: ComponentsService
     ) {
     }
 
     ngOnInit() {
-        this.componentsService.getData().subscribe((data) => {
-            this.components = data;
-            console.log(this.components);
-        });
-    }
-
-    isSelected(component) {
-        return component === this.selectedId;
     }
 
     onSelect(component) {
-        console.log(component.id);
-        this.router.navigate(['/components/' + component.id]);
+        this.selectedComponent = component;
+        this.router.navigate(['/components', component.id]);
     }
 }

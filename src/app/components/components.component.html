@@ -4,8 +4,8 @@
 
 <md-sidenav-container>
 	<md-sidenav mode="side" opened="true" class="docs-component-viewer-sidenav">
-		<app-components-list></app-components-list>
+		<app-components-list [components]="components"></app-components-list>
 	</md-sidenav>
 
-	<app-components-detail></app-components-detail>
+	<router-outlet></router-outlet>
 </md-sidenav-container>

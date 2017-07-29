@@ -5,7 +5,7 @@ const fs = require('fs');
 
 //path
 const src = 'src/';
-const componentsJson = '../src/assets/data/components.json';
+const componentsJson = '../src/assets/data/components/component';
 const components = src + 'components/';
 
 let componentData = [];
@@ -19,9 +19,18 @@ fs.readdir(components, (err, files) => {
 	files.forEach(file => {
 		parsingHtml(components, file).then(
 			result => {
-				componentData.push(result);
+				componentData.push({
+					id: result.id,
+					name: result.name
+				});
 
-				fs.writeFile(componentsJson, JSON.stringify(componentData, null, '  '), function (err) {
+				fs.writeFile(componentsJson + '-' + result.id + '.json', JSON.stringify(result, null, '  '), function (err) {
+					if (err) {
+						return console.log(err);
+					}
+					console.log(result);
+				});
+				fs.writeFile(componentsJson + 's.json', JSON.stringify(componentData, null, '  '), function (err) {
 					if (err) {
 						return console.log(err);
 					}

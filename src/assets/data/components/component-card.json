@@ -1,0 +1,6 @@
+{
+  "id": "card",
+  "name": "Карточка",
+  "desc": "\n\tВид карточки блога\n",
+  "code": "\n\t<div class=\"blog-nest blog-nest_columns\">\n\t\t<section class=\"blog-nest__item blog-nest__item_x1\">\n\t\t\t<a href=\"//www.rabota.ru/articles/career/kogo-sokratyt-pervim-4406\" class=\"blog-post blog-post_article\">\n\t\t\t\t<div class=\"blog-post__img\">\n\t\t\t\t\t<div class=\"blog-post__img-inner\" style=\"background-image: url(//pix.rabota.ru/blog/article/0001/01/thumb_752_article_small.jpeg);\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"blog-post__inner\">\n\t\t\t\t\t<header class=\"blog-post__header\">\n\t\t\t\t\t\t<div class=\"blog-post__title\">\n\t\t\t\t\t\t\t<h3 title=\"Как не стать жертвой сокращения\">Как не стать жертвой сокращения</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"blog-post__lead\">Откровения начальника</div>\n\t\t\t\t\t</header>\n\t\t\t\t\t<div class=\"blog-post__options\">\n\t\t\t\t\t\t<div class=\"blog-post__tags\">\n\t\t\t\t\t\t\t<span title=\"Карьера\">Карьера</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"blog-post__date\">13 июля</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</a>\n\t\t</section>\n\t</div>\n"
+}
