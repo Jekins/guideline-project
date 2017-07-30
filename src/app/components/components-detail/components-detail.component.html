@@ -7,20 +7,23 @@
 		<div class="container" #container>
 			<md-tab-group *ngFor="let view of component.views" (selectChange)="onSelectChange($event, tabGroup)" #tabGroup>
 				<md-tab label="Вид компонента">
-					<p [innerHTML]="view.desc | keepHtml"></p>
+					<p class="viewer-desc" [innerHTML]="view.desc | keepHtml"></p>
 					<br>
-					<iframe class="frame" #iframe frameborder="0" style="display: none;"></iframe>
-					<div class="loading">Загрузка...</div>
+					<div class="viewer-wrapper">
+						<iframe class="frame" #iframe frameborder="0" style="display: none;"></iframe>
+						<div class="loading">Загрузка...</div>
+					</div>
 				</md-tab>
 				<md-tab label="Код компонента">
-					<!--<button-->
-							<!--[clipboard]="copyCode.innerHTML.trim()"-->
-							<!--(clipboardCopy)="logSuccess( $event )"-->
-							<!--(clipboardError)="logError( $event )">-->
-						<!--Скопировать-->
-					<!--</button>-->
-					<!--<textarea #copyCode style="display: none;" [innerHTML]="view.code"></textarea>-->
-<pre><code #code >{{view.code}}
+					<div>
+						<button class="clipboard-button" color="primary" md-raised-button (click)="copyCode(textCode)">
+							<md-icon>content_copy</md-icon>
+							Скопировать код
+						</button>
+						<textarea #textCode class="clipboard-textarea">{{view.code}}</textarea>
+					</div>
+					<br>
+<pre class="viewer-wrapper"><code #code >{{view.code}}
 </code></pre>
 				</md-tab>
 			</md-tab-group>

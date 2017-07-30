@@ -4,7 +4,7 @@
   "views": [
     {
       "desc": "\n\t\tКарточка новости. Вид придается модификатором <b>blog-post_news</b>\n\t",
-      "width": "33%",
+      "width": "25%",
       "code": "\n\t\t<a href=\"//www.rabota.ru/articles/career/yandex-taksi-i-uber-odna-kompaniya-4410\" class=\"blog-post blog-post_news\">\n\t\t\t<div class=\"blog-post__img\">\n\t\t\t\t<div class=\"blog-post__img-inner\" style=\"background-image: url(//pix.rabota.ru/blog/article/0001/01/thumb_756_article_small.jpeg);\"></div>\n\t\t\t</div>\n\t\t\t<div class=\"blog-post__inner\">\n\t\t\t\t<header class=\"blog-post__header\">\n\t\t\t\t\t<div class=\"blog-post__title\">\n\t\t\t\t\t\t<h3 title=\"Яндекс.Такси и Uber объединяются в одну компанию\">Яндекс.Такси и Uber объединяются в одну компанию</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"blog-post__lead\">Что это значит для водителей и пассажиров</div>\n\t\t\t\t</header>\n\t\t\t\t<div class=\"blog-post__options\">\n\t\t\t\t\t<div class=\"blog-post__tags\">\n\t\t\t\t\t\t<span title=\"Новости\">Новости</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"blog-post__date\">13 июля</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</a>\n\t"
     }
   ]

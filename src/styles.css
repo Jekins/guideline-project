@@ -6,6 +6,9 @@ html, body, material-app, md-sidenav-container, .my-content {
 	width: 100%;
 	height: 100%;
 }
+body {
+	overflow: hidden;
+}
 md-toolbar {
 	position: relative;
 	z-index: 10;
@@ -22,15 +25,17 @@ md-sidenav {
 }
 .container {
 	margin: 0 auto;
-	/*max-width: 940px;*/
+	max-width: 1300px;
 }
 .mat-tab-group {
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 }
-
+.loading {
+	padding: 20px;
+}
 .app-view {
 	font-weight: 400;
-	padding: 20px 70px 50px;
+	padding: 20px 70px 70px 70px;
 }
 .mat-tab-label {
 	font-weight: 400;
@@ -89,4 +94,30 @@ md-sidenav {
 	padding: 0 16px;
 	background: rgba(0,0,0,.32);
 	color: hsla(0,0%,100%,.87);
+}
+
+.clipboard-button .mat-icon {
+	width: 19px;
+	height: 19px;
+	font-size: 19px;
+	margin-right: 5px;
+}
+.clipboard-textarea {
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+.mat-tab-header {
+	margin-bottom: 20px;
+}
+
+.viewer-wrapper {
+	border: 1px solid rgba(0, 0, 0, 0.03);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+	margin: 4px;
+	background-color: #fff;
+}
+.viewer-desc {
+	font-size: 16px;
+	line-height: 28px;
 }

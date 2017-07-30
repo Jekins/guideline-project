@@ -3,6 +3,7 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import {ComponentsService} from '../components.service';
+import {ClipboardService} from '../../shared/clipboard.service';
 
 declare var hljs: any;
 
@@ -20,7 +21,8 @@ export class ComponentsDetailComponent implements OnInit, AfterViewInit {
     private isInited: boolean;
 
     constructor(private componentService: ComponentsService,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private clipboardService: ClipboardService) {
     }
 
     ngOnInit() {
@@ -40,7 +42,11 @@ export class ComponentsDetailComponent implements OnInit, AfterViewInit {
             for (let i = 0; i < this.container.nativeElement.getElementsByTagName('iframe').length; i++) {
                 this.loadIframe(i);
             }
-        });
+        }, 10);
+    }
+
+    copyCode(value) {
+        this.clipboardService.copyValue(value);
     }
 
     loadIframe(index: number) {
@@ -77,28 +83,9 @@ export class ComponentsDetailComponent implements OnInit, AfterViewInit {
             this.isInited = true;
             this.ngAfterViewInit();
         } else {
-            hljs.highlightBlock(this.codeElement.nativeElement);
+            console.log();
+            hljs.highlightBlock(tabGroup._tabBodyWrapper.nativeElement.querySelector('code'));
             tabGroup._tabBodyWrapper.nativeElement.querySelector('iframe').classList.remove('inited');
         }
-    }
-
-
-    // I log Clipboard "copy" errors.
-    public logError( error: Error ) : void {
-
-        console.group( "Clipboard Error" );
-        console.error( error );
-        console.groupEnd();
-
-    }
-
-
-    // I log Clipboard "copy" successes.
-    public logSuccess( value: string ) : void {
-
-        console.group( "Clipboard Success" );
-        console.log( value );
-        console.groupEnd();
-
     }
 }

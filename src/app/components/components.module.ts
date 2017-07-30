@@ -1,12 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MdListModule, MdInputModule, MdSidenavModule, MdToolbarModule, MdTabsModule} from '@angular/material';
+import {
+    MdListModule,
+    MdInputModule,
+    MdSidenavModule,
+    MdToolbarModule,
+    MdTabsModule,
+    MdButtonModule,
+    MdIconModule,
+    MdSnackBarModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {KeepHtmlPipe} from '../pipes/keep-html.pipe';
 
-import {ClipboardDirective} from './clipboard.directive';
-import {ClipboardService} from './clipboard.service';
+import {ClipboardService} from '../shared/clipboard.service';
 
 import {ComponentsComponent} from './components.component';
 import {ComponentsHomeComponent} from './components-home/components-home.component';
@@ -25,6 +33,9 @@ import {ComponentsRoutingModule} from './components-routing.module';
         MdSidenavModule,
         MdToolbarModule,
         MdTabsModule,
+        MdButtonModule,
+        MdIconModule,
+        MdSnackBarModule,
         BrowserAnimationsModule,
         ComponentsRoutingModule
     ],
@@ -33,12 +44,10 @@ import {ComponentsRoutingModule} from './components-routing.module';
         ComponentsComponent,
         ComponentsHomeComponent,
         ComponentsListComponent,
-        ComponentsDetailComponent,
-        ClipboardDirective
+        ComponentsDetailComponent
     ],
     exports: [
-        ComponentsComponent,
-        ClipboardDirective
+        ComponentsComponent
     ],
     providers: [
         ComponentsService,
