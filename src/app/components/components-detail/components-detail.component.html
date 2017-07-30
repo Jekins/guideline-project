@@ -4,21 +4,26 @@
 	</md-toolbar>
 	<div class="app-view">
 
-		<div class="container">
-			<md-tab-group>
+		<div class="container" #container>
+			<md-tab-group *ngFor="let view of component.views" (selectChange)="onSelectChange($event, tabGroup)" #tabGroup>
 				<md-tab label="Вид компонента">
-					<iframe #iframe frameborder="0"></iframe>
-					<!--<div [innerHTML]="component.code | keepHtml"></div>-->
+					<p [innerHTML]="view.desc | keepHtml"></p>
+					<br>
+					<iframe class="frame" #iframe frameborder="0" style="display: none;"></iframe>
+					<div class="loading">Загрузка...</div>
 				</md-tab>
 				<md-tab label="Код компонента">
-						<pre>
-{{component.code}}
-						</pre>
+					<!--<button-->
+							<!--[clipboard]="copyCode.innerHTML.trim()"-->
+							<!--(clipboardCopy)="logSuccess( $event )"-->
+							<!--(clipboardError)="logError( $event )">-->
+						<!--Скопировать-->
+					<!--</button>-->
+					<!--<textarea #copyCode style="display: none;" [innerHTML]="view.code"></textarea>-->
+<pre><code #code >{{view.code}}
+</code></pre>
 				</md-tab>
 			</md-tab-group>
-
-			<h2>Описание комопнента</h2>
-			<p> {{component.desc}} </p>
 		</div>
 	</div>
 </div>

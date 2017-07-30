@@ -5,6 +5,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {KeepHtmlPipe} from '../pipes/keep-html.pipe';
 
+import {ClipboardDirective} from './clipboard.directive';
+import {ClipboardService} from './clipboard.service';
+
 import {ComponentsComponent} from './components.component';
 import {ComponentsHomeComponent} from './components-home/components-home.component';
 import {ComponentsListComponent} from './components-list/components-list.component';
@@ -30,13 +33,16 @@ import {ComponentsRoutingModule} from './components-routing.module';
         ComponentsComponent,
         ComponentsHomeComponent,
         ComponentsListComponent,
-        ComponentsDetailComponent
+        ComponentsDetailComponent,
+        ClipboardDirective
     ],
     exports: [
-        ComponentsComponent
+        ComponentsComponent,
+        ClipboardDirective
     ],
     providers: [
-        ComponentsService
+        ComponentsService,
+        ClipboardService
     ]
 })
 export class ComponentsModule {

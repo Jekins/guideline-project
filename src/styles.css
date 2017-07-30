@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 html, body, material-app, md-sidenav-container, .my-content {
 	margin: 0;
@@ -22,7 +22,7 @@ md-sidenav {
 }
 .container {
 	margin: 0 auto;
-	max-width: 940px;
+	/*max-width: 940px;*/
 }
 .mat-tab-group {
 	margin-bottom: 50px;

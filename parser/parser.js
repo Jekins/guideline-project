@@ -48,9 +48,17 @@ function parsingHtml(dir, file) {
 
 		let result = {};
 		result.id = file.replace('.html','');
-		result.name = $('name').html();
-		result.desc = $('desc').html();
-		result.code = $('codes').html();
+		result.name = $('name').text();
+		result.views = [];
+
+		for (let i = 0; i < $('view').length; i++) {
+			let $view = $('view').eq(i);
+			let view = {};
+			view.desc = $view.find('desc').html();
+			view.width = $view.find('width').length ? $view.find('width').text() : '100%';
+			view.code = $view.find('tpl').html();
+			result.views.push(view);
+		}
 
 		resolve(result);
 	});
