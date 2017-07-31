@@ -9,7 +9,7 @@
 				<md-tab label="Вид компонента">
 					<p class="viewer-desc" [innerHTML]="view.desc | keepHtml"></p>
 					<br>
-					<div class="viewer-wrapper">
+					<div class="viewer-wrapper" *ngIf="view.preview !== 'hidden'">
 						<iframe class="frame" #iframe frameborder="0" style="display: none;"></iframe>
 						<div class="loading">Загрузка...</div>
 					</div>

@@ -4,8 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node parser/parser.js && ng serve",
+    "build": "node parser/parser.js && ng build",
+    "compile": "node parser/parser.js",
+    "compile:w": "node parser/parser.js -w",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

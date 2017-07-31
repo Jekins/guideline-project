@@ -1,0 +1,157 @@
+<name>Переменные</name>
+<view>
+	<desc>Параметры всех глобальных переменных, которые используются в проекте.</desc>
+	<preview hidden></preview>
+	<tpl>
+		/* variables ***********************/
+		//все цвета
+		@c-white: #ffffff;
+		@c-black: #000000;
+		@c-dark: #424b5c;
+		@c-dark-light: #485265;
+		@c-red: #f2412f;
+		@c-red-dark: #cd2315;
+		@c-red-light: #fe5746;
+		@c-green: #08be7a;
+		@c-green-dark: darken(@c-green, 15%);
+		@c-green-light: lighten(@c-green, 15%);
+		@c-green-lighten: #d7feef;
+		@c-sky: #6dcff6;
+		@c-blue: #275a95;
+		@c-blue-dark: #3f558f;
+		@c-blue-light: #aeb9ce;
+		@c-blue-lighten: #e9f7ff;
+		@c-orange: #ff9800;
+		@c-orange-dark: darken(@c-orange, 15%);
+		@c-orange-light: lighten(@c-orange, 15%);
+		@c-yellow: #fbd91a;
+		@c-yellow-dark: darken(@c-yellow, 15%);
+		@c-yellow-light: #fef4b9;
+		@c-gray: #878b92;
+		@c-gray-light: #f1f3f4;
+		@c-gray-dark: darken(@c-gray, 15%);
+		@c-flesh: #fffdf2;
+		@c-flesh-dark: #fef4ba;
+
+		//конкретные цвета
+		@c-base: @c-black;
+		@c-link: @c-blue;
+		@c-accent: @c-yellow;
+		@c-primary: @c-red;
+		@c-danger: @c-red;
+		@c-success: @c-green;
+		@c-warning: @c-orange;
+		@c-border: #e9eaeb;
+		@c-bg-gray: @c-gray-light;
+		@c-icons: #c7c7c7;
+
+		//отступы
+		@indent-base: 15;
+		@indent-large: ceil(@indent-base * 2);
+		@indent-very-large: ceil(@indent-large * 2);
+		@indent-small: ceil(@indent-base / 2);
+		@indent-very-small: ceil(@indent-small / 2);
+
+		//межстрочный интервал
+		@lh-base: 1.5;
+		@lh-small: @lh-base - .2;
+		@lh-very-small: @lh-small - .2;
+		@lh-large: @lh-base + .2;
+		@lh-very-large: @lh-large + .2;
+
+		//размеры базовых шрифтов
+		@fz-base: 14;
+		@fz-small: @fz-base - 2;
+		@fz-very-small: @fz-small - 2;
+		@fz-large: @fz-base + 2;
+		@fz-very-large: @fz-large + 2;
+
+		//размеры шрифтов заголовков
+		@h1-fz: 36;
+		@h2-fz: 24;
+		@h3-fz: 18;
+		@h4-fz: 16;
+		@h5-fz: 14;
+		@h6-fz: 13;
+
+		//размеры отступов заголовков
+		@h1-mb: @indent-large;
+		@h2-mb: @indent-base;
+		@h3-mb: @indent-base;
+		@h4-mb: @indent-small;
+		@h5-mb: @indent-small;
+		@h6-mb: @indent-small;
+
+		//шрифты
+		@ff-base: 'Open Sans', Arial, sans-serif;
+		@ff-serif: 'Georgia', Times, serif;
+
+		//настройки заголовков
+		@heading-ff: @ff-base;
+		@heading-c: @c-base;
+		@heading-fw: bold;
+		@heading-lh: 1.2;
+
+		//скругления углов
+		@radius-base: 2px;
+		@radius-large: @radius-base + 2;
+		@radius-very-large: @radius-large + 2;
+		@radius-small: @radius-base - 2;
+		@radius-very-small: @radius-small - 2;
+
+		//настройки body
+		@body-bg: @c-white;
+		@body-ff: @ff-base;
+		@body-c: @c-base;
+		@body-fz: @fz-base;
+		@body-lh: @lh-base;
+		@body-mw: 320px;
+
+		//цвет ссылок
+		@link-c: @c-link;
+		@link-hover-c: @c-link;
+
+		//общая высота для кнопки и инпута
+		@ib-height: 34px;
+
+		//настройки базовых инпутов
+		@input-h: @ib-height;
+		@input-p-tb: 6;
+		@input-p-lr: @indent-base;
+		@input-fz: @fz-base;
+		@input-c: @c-base;
+		@input-bg: @c-white;
+		@input-border-c: #cccccc;
+		@input-border: 1px solid @input-border-c;
+		@input-border-hover: @c-gray;
+		@input-placeholder-c: lighten(@input-c, 48%);
+		@input-error-c: @c-danger;
+		@input-radius: @radius-base;
+
+		//цвет hr
+		@hr-c: @c-border;
+
+		//размер отступа колонок бутстраповской сетки
+		@cont-padding: @indent-base;
+
+		//размеры баннеров
+		@banner-side-h: 300;
+		@banner-side-v: 600;
+		@banner-side-v2: 250;
+
+		//тени
+		@shadow-dropdown: 0 7px 12px rgba(0,0,0,0.1);
+
+		//размеры экранов для адаптации
+		@screen-ulg: 1310px;
+		@screen-lg: 1200px;
+		@screen-md: 992px;
+		@screen-sm: 767px;
+		@screen-xs: 500px;
+
+		//название общих классов
+		@branding: branding;
+		@branding-dark: branding_dark;
+		@branding-dark-second: branding_dark-second;
+	</tpl>
+</view>

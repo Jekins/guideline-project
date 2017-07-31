@@ -39,8 +39,15 @@ export class ComponentsDetailComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         setTimeout(() => {
             this.isInited = true;
-            for (let i = 0; i < this.container.nativeElement.getElementsByTagName('iframe').length; i++) {
-                this.loadIframe(i);
+            if (this.container !== undefined) {
+                for (let i = 0; i < this.container.nativeElement.getElementsByTagName('iframe').length; i++) {
+                    this.loadIframe(i);
+                }
+            } else {
+                setTimeout(() => {
+                    console.log('Reloading');
+                    this.ngAfterViewInit();
+                }, 500);
             }
         }, 10);
     }
@@ -58,21 +65,31 @@ export class ComponentsDetailComponent implements OnInit, AfterViewInit {
                     return;
                 }
 
-                iframe.width = '';
-                iframe.height = '';
-                iframe.contentWindow.document.body.innerHTML = '';
-                iframe.contentWindow.document.write(
-                    '<link rel="stylesheet" href="//static.rabota.ru/css/asset/app-3bd0052.css"/>' +
-                    '<style>body{padding:20px}</style>' +
-                    this.component.views[index].code
-                );
-                setTimeout(() => {
-                    iframe.setAttribute('style', 'width:' + this.component.views[index].width + '; display: block');
-                    iframe.height = iframe.contentWindow.document.body.scrollHeight;
-                    this.container.nativeElement.querySelectorAll('.loading')[index].setAttribute('style', 'display:' +
-                        ' none');
-                }, 500);
-                iframe.classList.add('inited');
+                let preview;
+                if (this.component.views[index].preview !== false && this.component.views[index].preview !== 'hidden') {
+                    preview = this.component.views[index].preview;
+                } else if (this.component.views[index].preview === 'hidden') {
+                    preview = false;
+                } else {
+                    preview = this.component.views[index].code;
+                }
+
+                if (preview) {
+                    iframe.width = '';
+                    iframe.height = '';
+                    iframe.contentWindow.document.body.innerHTML = '';
+                    iframe.contentWindow.document.write(
+                        '<link rel="stylesheet" href="//static.rabota.ru/css/asset/app-3bd0052.css"/>' +
+                        '<style>body{padding:20px;overflow-y:auto;}</style>' +
+                        preview
+                    );
+                    setTimeout(() => {
+                        iframe.setAttribute('style', 'width:' + this.component.views[index].width + '; display: block');
+                        iframe.height = iframe.contentWindow.document.body.scrollHeight;
+                        this.container.nativeElement.querySelectorAll('.loading')[index].setAttribute('hidden', 'hidden');
+                    }, 500);
+                    iframe.classList.add('inited');
+                }
                 this.isInited = false;
             }, 500);
         }
@@ -83,9 +100,10 @@ export class ComponentsDetailComponent implements OnInit, AfterViewInit {
             this.isInited = true;
             this.ngAfterViewInit();
         } else {
-            console.log();
             hljs.highlightBlock(tabGroup._tabBodyWrapper.nativeElement.querySelector('code'));
-            tabGroup._tabBodyWrapper.nativeElement.querySelector('iframe').classList.remove('inited');
+            if (tabGroup._tabBodyWrapper.nativeElement.querySelector('iframe')) {
+                tabGroup._tabBodyWrapper.nativeElement.querySelector('iframe').classList.remove('inited');
+            }
         }
     }
 }
